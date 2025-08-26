@@ -1,6 +1,6 @@
 /** @odoo-module **/
 
-
+/**test  */
 
 import { Component } from "@odoo/owl";
 import { registry } from "@web/core/registry";
