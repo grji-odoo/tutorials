@@ -6,10 +6,11 @@ import { Layout } from "@web/search/layout";
 import { useService } from "@web/core/utils/hooks";
 import { DashboardItem } from "./dashboarditem/dashboarditem";
 import { rpc } from "@web/core/network/rpc";
+import { PieChart } from "./piechart/piechart";
 
 class AwesomeDashboard extends Component {
     static template = "awesome_dashboard.AwesomeDashboard";
-    static components = {Layout , DashboardItem};
+    static components = {Layout , DashboardItem, PieChart};
     static props = {};
 
 

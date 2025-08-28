@@ -30,6 +30,11 @@
                         <h3 class="text-lg font-semibold text-gray-800">Avg. Time to Close an Order (min)</h3>
                         <p class="text-gray-600 text-xl font-bold" t-esc="statistics.avg_time_to_close || 0"/>
                     </DashboardItem>
+
+                    <DashboardItem size="2">
+                    Shirt orders by size
+                    <PieChart data="statistics['orders_by_size']" label="'Shirt orders by size'"/>
+                    </DashboardItem>
                 </t>
             </div>
             
