@@ -3,13 +3,34 @@
 
     <t t-name="awesome_dashboard.AwesomeDashboard">
         <Layout display="{controlPanel: {}}" className="'o_dashboard h-100'">
-            <div class="o_dashboard_content">
-                <DashboardItem>
-                    <p>first card</p>
-                </DashboardItem>
-                <DashboardItem size="2">
-                    <p>this card is twice as wide</p>
-                </DashboardItem>
+            <div class="o_dashboard_content d-flex justify-center gap-4 p-4 items-start flex-row">
+                
+                <t t-if="statistics">
+                    <DashboardItem>
+                        <h3 class="text-lg font-semibold text-gray-800">New Orders This Month</h3>
+                        <p class="text-gray-600 text-xl font-bold" t-esc="statistics.new_orders_count || 0"/>
+                    </DashboardItem>
+
+                    <DashboardItem>
+                        <h3 class="text-lg font-semibold text-gray-800">Total Amount</h3>
+                        <p class="text-gray-600 text-xl font-bold" t-esc="statistics.total_amount_new_orders || 0"/>
+                    </DashboardItem>
+
+                    <DashboardItem>
+                        <h3 class="text-lg font-semibold text-gray-800">Average T-shirts per Order</h3>
+                        <p class="text-gray-600 text-xl font-bold" t-esc="statistics.avg_tshirt_per_order || 0"/>
+                    </DashboardItem>
+
+                    <DashboardItem>
+                        <h3 class="text-lg font-semibold text-gray-800">Cancelled Orders This Month</h3>
+                        <p class="text-gray-600 text-xl font-bold" t-esc="statistics.cancelled_orders_count || 0"/>
+                    </DashboardItem>
+
+                    <DashboardItem size="2">
+                        <h3 class="text-lg font-semibold text-gray-800">Avg. Time to Close an Order (min)</h3>
+                        <p class="text-gray-600 text-xl font-bold" t-esc="statistics.avg_time_to_close || 0"/>
+                    </DashboardItem>
+                </t>
             </div>
             
             <t t-set-slot="layout-buttons">
