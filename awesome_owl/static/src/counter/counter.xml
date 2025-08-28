@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="awesome_owl.Counter">
+        <div class="p-4 bg-blue-100 rounded-lg shadow-md text-center">
+            <h2 class="text-xl font-bold mb-2">Counter</h2>
+            <p class="text-3xl font-extrabold text-blue-800 mb-4" t-esc="state.value"/>
+            <button t-on-click="increment" class="px-6 py-3 bg-blue-600 text-black font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75 transition duration-150 ease-in-out">
+                Increment
+            </button>
+        </div>
+    </t>
+</templates>

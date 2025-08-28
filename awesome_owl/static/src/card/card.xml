@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="awesome_owl.Card">
+        <div class="card p-4 border rounded-lg shadow-sm card">
+            <div class="card-title text-xl font-semibold mb-2" t-out="props.title"/>
+            
+            <t t-if="props.content">
+                <div class="card-content text-gray-700" t-out="props.content"/>
+            </t>
+        </div>
+    </t>
+</templates>

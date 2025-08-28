@@ -1,10 +1,30 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
+    <t t-name="awesome_owl.Playground">
+        <div class="flex flex-col items-center justify-center min-h-screen bg-gray-50 p-4 space-y-8">
+            <h1 class="text-4xl font-extrabold text-gray-900 mb-6">Awesome Owl Playground</h1>
 
-    <t t-name="awesome_owl.playground">
-        <div class="p-3">
-            hello world
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <Counter/>
+                <Counter/>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <t t-foreach="cards" t-as="card" t-key="card.id">
+                    <Card title="card.title" content="card.content"/>
+                </t>
+            </div>
+
+            <h2>Sum of 2 Counters</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <Counter onChange="incrementSum.bind(this)"/>
+                <Counter onChange="incrementSum.bind(this)"/>
+            </div>
+
+            <p class="text-gray-600 text-lg mt-8">Sum of counters: <b t-esc="state.sum"/></p>
+
+            <TodoList/>
+
         </div>
     </t>
-
 </templates>

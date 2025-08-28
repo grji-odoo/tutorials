@@ -36,6 +36,8 @@
             ('include', 'web._assets_core'),
             'web/static/src/libs/fontawesome/css/font-awesome.css',
             'awesome_owl/static/src/**/*',
+            'awesome_owl/static/src/**/*.xml',
+            'awesome_owl/static/src/**/*.js',
         ],
     },
     'license': 'AGPL-3'

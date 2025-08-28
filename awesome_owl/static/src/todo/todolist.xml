@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="awesome_owl.TodoList">
+        <div class="p-4 bg-white shadow-md rounded-lg">
+            <h2 class="text-2xl font-semibold mb-4">My Todo List</h2>
+            
+            <input 
+                placeholder="Enter a new task" 
+                class="form-control mb-4" 
+                t-on-keyup="addTodo"
+            />
+            
+            <div class="todo-list">
+                <t t-foreach="todos" t-as="todo" t-key="todo.id">
+                    <!-- Pass the toggleTodoState method as a prop -->
+                    <TodoItem todo="todo" toggleState="toggleTodoState.bind(this)"/>
+                </t>
+            </div>
+        </div>
+    </t>
+</templates>
