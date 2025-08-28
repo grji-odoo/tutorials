@@ -3,17 +3,20 @@
 
     <t t-name="awesome_dashboard.AwesomeDashboard">
         <Layout display="{controlPanel: {}}" className="'o_dashboard h-100'">
-         <div class="o_dashboard_content"></div>
-          <t t-set-slot="layout-buttons">
+            <div class="o_dashboard_content">
+                <DashboardItem>
+                    <p>first card</p>
+                </DashboardItem>
+                <DashboardItem size="2">
+                    <p>this card is twice as wide</p>
+                </DashboardItem>
+            </div>
+            
+            <t t-set-slot="layout-buttons">
                 <button class="btn btn-primary" t-on-click="openCustomerView">Customers</button>
                 <button class="btn btn-primary" t-on-click="openLeads">Leads</button>
             </t>
         </Layout>
-
     </t>
-
-    <!-- <Layout display="display" className="'o_dashboard h-100'"></Layout> -->
-
-    
 
 </templates>
