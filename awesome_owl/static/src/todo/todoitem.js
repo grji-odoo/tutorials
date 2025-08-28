@@ -19,6 +19,14 @@ export class TodoItem extends Component {
         toggleState: {
             type: Function,
             optional: false
+        },
+        removeTodo: {
+            type: Function,
+            optional: true,
         }
     };
+
+    onRemove() {
+        this.props.removeTodo(this.props.todo.id);
+    }
 }

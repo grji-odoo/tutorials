@@ -8,6 +8,7 @@
                    class="mr-2 cursor-pointer"/>
             <span class="font-bold w-6" t-esc="props.todo.id + '. '"/>
             <span class="flex-1 ml-2" t-esc="props.todo.description"/>
+            <span role="button" class="fa fa-trash ms-3 text-danger" t-on-click="onRemove"/>
         </div>
     </t>
 </templates>

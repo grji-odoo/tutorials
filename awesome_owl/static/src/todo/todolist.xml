@@ -13,7 +13,7 @@
             <div class="todo-list">
                 <t t-foreach="todos" t-as="todo" t-key="todo.id">
                     <!-- Pass the toggleTodoState method as a prop -->
-                    <TodoItem todo="todo" toggleState="toggleTodoState.bind(this)"/>
+                    <TodoItem todo="todo" toggleState="toggleTodoState.bind(this)" removeTodo="removeTodo.bind(this)"/>
                 </t>
             </div>
         </div>
