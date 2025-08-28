@@ -15,8 +15,18 @@ class AwesomeDashboard extends Component {
     setup() {
         this.action = useService("action");
     }
-    openCustomers() {
+    openCustomerView() {
         this.action.doAction("base.action_partner_form");
+    }
+
+    openLeads() {
+        this.action.doAction({
+            type: "ir.actions.act_window",
+            name: "Leads",
+            res_model: "crm.lead",
+            views: [[false, "list"], [false, "form"]],
+            target: "current",
+        });
     }
 }
 
