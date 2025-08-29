@@ -3,16 +3,16 @@
     'name': "Awesome Clicker",
 
     'summary': """
-        Starting module for "Master the Odoo web framework, chapter 1: Build a Clicker game"
+        Companion addon for the Odoo Smartclass 2024 on the JS Framework
     """,
 
     'description': """
-        Starting module for "Master the Odoo web framework, chapter 1: Build a Clicker game"
+        Companion addon for the Odoo Smartclass 2024 on the JS Framework
     """,
 
     'author': "Odoo",
     'website': "https://www.odoo.com/",
-    'category': 'Tutorials/AwesomeClicker',
+    'category': 'Tutorials',
     'version': '0.1',
     'application': True,
     'installable': True,
