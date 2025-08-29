@@ -3,7 +3,7 @@
 
     <t t-name="awesome_dashboard.AwesomeDashboard">
         <Layout display="{controlPanel: {}}" className="'o_dashboard h-100'">
-            <div class="o_dashboard_content d-flex justify-center gap-4 p-4 items-start flex-row">
+            <div class="o_dashboard_content d-flex justify-center gap-4 p-4 items-start flex-row" t-if="statistics.isReady">
                 
                 <t t-if="statistics">
                     <DashboardItem>

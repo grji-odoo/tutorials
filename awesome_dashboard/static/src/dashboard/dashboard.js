@@ -1,10 +1,10 @@
 /** @odoo-module **/
 
-import { Component, onWillStart } from "@odoo/owl";
+import { Component, onWillStart, useState } from "@odoo/owl";
 import { registry } from "@web/core/registry";
 import { Layout } from "@web/search/layout";
 import { useService } from "@web/core/utils/hooks";
-import { DashboardItem } from "./dashboarditem/dashboarditem";
+import { DashboardItem } from "./dashboarditem";
 import { rpc } from "@web/core/network/rpc";
 import { PieChart } from "./piechart/piechart";
 
@@ -16,11 +16,11 @@ class AwesomeDashboard extends Component {
 
     setup() {
         this.action = useService("action");
-        this.statistics = useService("awesome_dashboard.statistics");
-        onWillStart(async () => {
-            //this.statistics = await rpc("/awesome_dashboard/statistics");
-            this.statistics = await this.statistics.loadStatistics();
-        });
+        this.statistics = useState(useService("awesome_dashboard.statistics"));
+        // onWillStart(async () => {
+        //     //this.statistics = await rpc("/awesome_dashboard/statistics");
+        //     this.statistics = await this.statistics.loadStatistics();
+        // });
     }
 
     openCustomerView() {
@@ -38,6 +38,6 @@ class AwesomeDashboard extends Component {
     }
 }
 
-registry.category("actions").add("awesome_dashboard.dashboard", AwesomeDashboard);
-
+//registry.category("actions").add("awesome_dashboard.dashboard", AwesomeDashboard);
+registry.category("lazy_components").add("AwesomeDashboard", AwesomeDashboard);
 
