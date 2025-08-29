@@ -8,27 +8,27 @@
                 <t t-if="statistics">
                     <DashboardItem>
                         <h3 class="text-lg font-semibold text-gray-800">New Orders This Month</h3>
-                        <p class="text-gray-600 text-xl font-bold" t-esc="statistics.new_orders_count || 0"/>
+                        <p class="text-gray-600 text-xl font-bold" t-esc="statistics.nb_new_orders || 0"/>
                     </DashboardItem>
 
                     <DashboardItem>
                         <h3 class="text-lg font-semibold text-gray-800">Total Amount</h3>
-                        <p class="text-gray-600 text-xl font-bold" t-esc="statistics.total_amount_new_orders || 0"/>
+                        <p class="text-gray-600 text-xl font-bold" t-esc="statistics.total_amount || 0"/>
                     </DashboardItem>
 
                     <DashboardItem>
                         <h3 class="text-lg font-semibold text-gray-800">Average T-shirts per Order</h3>
-                        <p class="text-gray-600 text-xl font-bold" t-esc="statistics.avg_tshirt_per_order || 0"/>
+                        <p class="text-gray-600 text-xl font-bold" t-esc="statistics.average_quantity || 0"/>
                     </DashboardItem>
 
                     <DashboardItem>
                         <h3 class="text-lg font-semibold text-gray-800">Cancelled Orders This Month</h3>
-                        <p class="text-gray-600 text-xl font-bold" t-esc="statistics.cancelled_orders_count || 0"/>
+                        <p class="text-gray-600 text-xl font-bold" t-esc="statistics.nb_cancelled_orders || 0"/>
                     </DashboardItem>
 
                     <DashboardItem size="2">
                         <h3 class="text-lg font-semibold text-gray-800">Avg. Time to Close an Order (min)</h3>
-                        <p class="text-gray-600 text-xl font-bold" t-esc="statistics.avg_time_to_close || 0"/>
+                        <p class="text-gray-600 text-xl font-bold" t-esc="statistics.average_time || 0"/>
                     </DashboardItem>
 
                     <DashboardItem size="2">
