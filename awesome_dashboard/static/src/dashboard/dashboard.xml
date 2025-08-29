@@ -6,35 +6,12 @@
             <div class="o_dashboard_content d-flex justify-center gap-4 p-4 items-start flex-row" t-if="statistics.isReady">
                 
                 <t t-if="statistics">
-                    <DashboardItem>
-                        <h3 class="text-lg font-semibold text-gray-800">New Orders This Month</h3>
-                        <p class="text-gray-600 text-xl font-bold" t-esc="statistics.nb_new_orders || 0"/>
-                    </DashboardItem>
-
-                    <DashboardItem>
-                        <h3 class="text-lg font-semibold text-gray-800">Total Amount</h3>
-                        <p class="text-gray-600 text-xl font-bold" t-esc="statistics.total_amount || 0"/>
-                    </DashboardItem>
-
-                    <DashboardItem>
-                        <h3 class="text-lg font-semibold text-gray-800">Average T-shirts per Order</h3>
-                        <p class="text-gray-600 text-xl font-bold" t-esc="statistics.average_quantity || 0"/>
-                    </DashboardItem>
-
-                    <DashboardItem>
-                        <h3 class="text-lg font-semibold text-gray-800">Cancelled Orders This Month</h3>
-                        <p class="text-gray-600 text-xl font-bold" t-esc="statistics.nb_cancelled_orders || 0"/>
-                    </DashboardItem>
-
-                    <DashboardItem size="2">
-                        <h3 class="text-lg font-semibold text-gray-800">Avg. Time to Close an Order (min)</h3>
-                        <p class="text-gray-600 text-xl font-bold" t-esc="statistics.average_time || 0"/>
-                    </DashboardItem>
-
-                    <DashboardItem size="2">
-                    Shirt orders by size
-                    <PieChart data="statistics['orders_by_size']" label="'Shirt orders by size'"/>
-                    </DashboardItem>
+                    <t t-foreach="items" t-as="item" t-key="item.id">
+                        <DashboardItem size="item.size || 1">
+                            <t t-set="itemProp" t-value="item.props ? item.props(statistics) : {'data': statistics}"/>
+                            <t t-component="item.Component" t-props="itemProp" />
+                        </DashboardItem>
+                    </t>
                 </t>
             </div>
             
